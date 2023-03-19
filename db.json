@@ -1,0 +1,14 @@
+{
+  "showcase": [
+    {
+      "id": "1",
+      "author": {
+        "username": "username",
+        "profileImg": "string"
+      },
+      "image": "string",
+      "likes": 1,
+      "content": "string"
+    }
+  ]
+}
