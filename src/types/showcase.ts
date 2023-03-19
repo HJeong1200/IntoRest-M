@@ -1,4 +1,4 @@
-export interface Showcase {
+export interface IShowcase {
   id: string;
   author: {
     username: string;

@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-const ShowcaseImg = () => {
+interface PropType {
+  image: string;
+}
+
+const ShowcaseImg = ({ image }: PropType) => {
   return <Wrapper></Wrapper>;
 };
 

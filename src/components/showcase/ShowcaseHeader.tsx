@@ -1,11 +1,18 @@
 import { Avatar } from "@mui/material";
 import styled from "styled-components";
 
-const ShowcaseHeader = () => {
+interface PropType {
+  author: {
+    username: string;
+    profileImg: string;
+  };
+}
+
+const ShowcaseHeader = ({ author }: PropType) => {
   return (
     <Wrapper>
-      <Avatar>H</Avatar>
-      <NameContainer>UserName</NameContainer>
+      <Avatar>{author.profileImg}</Avatar>
+      <NameContainer>{author.username}</NameContainer>
     </Wrapper>
   );
 };

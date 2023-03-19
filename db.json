@@ -9,6 +9,36 @@
       "image": "string",
       "likes": 1,
       "content": "string"
+    },
+    {
+      "id": "2",
+      "author": {
+        "username": "username",
+        "profileImg": "string"
+      },
+      "image": "string",
+      "likes": 3,
+      "content": "string"
+    },
+    {
+      "id": "3",
+      "author": {
+        "username": "username",
+        "profileImg": "string"
+      },
+      "image": "string",
+      "likes": 1,
+      "content": "string"
+    },
+    {
+      "id": "4",
+      "author": {
+        "username": "username",
+        "profileImg": "string"
+      },
+      "image": "string",
+      "likes": 10,
+      "content": "string"
     }
   ]
 }
