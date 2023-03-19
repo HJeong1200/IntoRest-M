@@ -1,5 +1,13 @@
+import styled from "styled-components";
+
 const ShowcaseImg = () => {
-  return <div>Img</div>;
+  return <Wrapper></Wrapper>;
 };
+
+const Wrapper = styled.div`
+  width: 100%;
+  height: 390px;
+  background-color: gray;
+`;
 
 export default ShowcaseImg;
