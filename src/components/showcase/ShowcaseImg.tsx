@@ -5,7 +5,11 @@ interface PropType {
 }
 
 const ShowcaseImg = ({ image }: PropType) => {
-  return <Wrapper></Wrapper>;
+  return (
+    <Wrapper>
+      <img alt="content image" src={image} />
+    </Wrapper>
+  );
 };
 
 const Wrapper = styled.div`

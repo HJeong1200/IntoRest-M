@@ -11,7 +11,7 @@ interface PropType {
 const ShowcaseHeader = ({ author }: PropType) => {
   return (
     <Wrapper>
-      <Avatar>{author.profileImg}</Avatar>
+      <Avatar alt="profile image" src={author.profileImg} />
       <NameContainer>{author.username}</NameContainer>
     </Wrapper>
   );
