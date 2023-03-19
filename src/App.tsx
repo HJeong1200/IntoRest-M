@@ -1,5 +1,13 @@
+import Header from "./components/header/Header";
+import ShowcaseList from "./pages/showcase/ShowcaseList";
+
 function App() {
-  return <div>Hello</div>;
+  return (
+    <div>
+      <Header />
+      <ShowcaseList />
+    </div>
+  );
 }
 
 export default App;
