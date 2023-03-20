@@ -1,3 +1,5 @@
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../firebase/firebase";
 import { Button } from "@mui/material";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
@@ -5,22 +7,27 @@ import { useState } from "react";
 import styled from "styled-components";
 
 const Signup = () => {
-  const [username, setUsername] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [passwordCheck, setPasswordCheck] = useState<string>("");
+
+  const handleSignup = () => {
+    if (password !== passwordCheck) return;
+
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        console.log(error.code, error.message);
+      });
+  };
 
   return (
     <Wrapper>
       <h2>Sign Up</h2>
       <Box component="form" sx={sx}>
-        <TextField
-          required
-          variant="standard"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          label="User Name"
-        />
         <TextField
           required
           variant="standard"
@@ -45,7 +52,7 @@ const Signup = () => {
           label="Password Check"
         />
       </Box>
-      <Button>Sign Up</Button>
+      <Button onClick={handleSignup}>Sign Up</Button>
     </Wrapper>
   );
 };
@@ -60,9 +67,9 @@ const Wrapper = styled.div`
 
 const sx = {
   display: "flex",
-  "flex-direction": "column",
+  flexDirection: "column",
   width: "80%",
-  "margin-bottom": "25px",
+  marginBottom: "25px",
 };
 
 export default Signup;
