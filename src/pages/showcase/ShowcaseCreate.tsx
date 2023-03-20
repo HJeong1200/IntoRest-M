@@ -1,5 +1,5 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../firebase/firebase";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "../../firebase/firebase";
 import { Button } from "@mui/material";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
@@ -9,8 +9,15 @@ import styled from "styled-components";
 const ShowcaseCreate = () => {
   const [content, setContent] = useState<string>("");
 
-  const handleUpload = () => {
+  const handleUpload = async () => {
     if (!content) return;
+
+    const newShowcase = {
+      content,
+      image: "https://picsum.photos/390",
+    };
+
+    await addDoc(collection(db, "showcase"), newShowcase);
   };
 
   return (

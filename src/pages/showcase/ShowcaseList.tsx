@@ -1,16 +1,29 @@
-import axios from "axios";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../firebase/firebase";
 import { useEffect, useState } from "react";
 import Showcase from "../../components/showcase/Showcase";
-import BASE_URL from "../../constants/server";
 import { IShowcase } from "../../types/showcase";
 
 const ShowcaseList = () => {
   const [showcaseList, setShowcaseList] = useState<IShowcase[]>([]);
 
+  const defaultShowcase: Partial<IShowcase> = {
+    author: {
+      username: "user",
+      profileImg: "string",
+    },
+    likes: 10,
+  };
+
   useEffect(() => {
     const getShowcaseList = async () => {
-      const { data } = await axios.get(`${BASE_URL}/showcase`);
-      setShowcaseList(data);
+      const querySnapshot = await getDocs(collection(db, "showcase"));
+
+      const data = querySnapshot.docs.map((doc) => {
+        return { ...defaultShowcase, id: doc.id, ...doc.data() };
+      });
+
+      setShowcaseList(data as IShowcase[]);
     };
 
     getShowcaseList();
