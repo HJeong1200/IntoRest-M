@@ -1,7 +1,15 @@
 import styled from "styled-components";
 
-const ShowcaseImg = () => {
-  return <Wrapper></Wrapper>;
+interface PropType {
+  image: string;
+}
+
+const ShowcaseImg = ({ image }: PropType) => {
+  return (
+    <Wrapper>
+      <img alt="content image" src={image} />
+    </Wrapper>
+  );
 };
 
 const Wrapper = styled.div`

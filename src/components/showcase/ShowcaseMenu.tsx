@@ -1,17 +1,36 @@
 import { IconButton, Stack } from "@mui/material";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
-const ShowcaseMenu = () => {
+import styled from "styled-components";
+
+interface PropType {
+  likes: number;
+}
+
+const ShowcaseMenu = ({ likes }: PropType) => {
   return (
-    <Stack direction="row" sx={{ padding: "0 10px" }}>
-      <IconButton>
-        <FavoriteBorderIcon />
-      </IconButton>
-      <IconButton>
-        <ChatBubbleOutlineIcon />
-      </IconButton>
-    </Stack>
+    <Wrapper>
+      <Stack direction="row">
+        <IconButton>
+          <FavoriteBorderIcon />
+        </IconButton>
+        <IconButton>
+          <ChatBubbleOutlineIcon />
+        </IconButton>
+      </Stack>
+      <div>
+        {likes} {likes < 2 ? "Like" : "Likes"}
+      </div>
+    </Wrapper>
   );
 };
+
+const Wrapper = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px 0 12px;
+`;
 
 export default ShowcaseMenu;

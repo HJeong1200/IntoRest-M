@@ -1,0 +1,44 @@
+{
+  "showcase": [
+    {
+      "id": "1",
+      "author": {
+        "username": "username",
+        "profileImg": "https://picsum.photos/100"
+      },
+      "image": "https://picsum.photos/390",
+      "likes": 1,
+      "content": "string"
+    },
+    {
+      "id": "2",
+      "author": {
+        "username": "username",
+        "profileImg": "https://picsum.photos/100"
+      },
+      "image": "https://picsum.photos/390",
+      "likes": 3,
+      "content": "string"
+    },
+    {
+      "id": "3",
+      "author": {
+        "username": "username",
+        "profileImg": "https://picsum.photos/100"
+      },
+      "image": "https://picsum.photos/390",
+      "likes": 1,
+      "content": "string"
+    },
+    {
+      "id": "4",
+      "author": {
+        "username": "username",
+        "profileImg": "https://picsum.photos/100"
+      },
+      "image": "https://picsum.photos/390",
+      "likes": 10,
+      "content": "string"
+    }
+  ]
+}

@@ -1,11 +1,9 @@
 import styled from "styled-components";
 
-const ShowcaseContents = () => {
+const ShowcaseContents = ({ content }: PropType) => {
   return (
     <Wrapper>
-      <ContentsContainer>
-        ContentsContentsContentsContentsContentsContentsContentsContents
-      </ContentsContainer>
+      <ContentsContainer>{content}</ContentsContainer>
     </Wrapper>
   );
 };
@@ -23,5 +21,9 @@ const ContentsContainer = styled.div`
   padding: 0 20px;
   word-wrap: break-word;
 `;
+
+interface PropType {
+  content: string;
+}
 
 export default ShowcaseContents;
