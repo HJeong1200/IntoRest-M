@@ -7,14 +7,16 @@ import { useState } from "react";
 import styled from "styled-components";
 
 const ShowcaseCreate = () => {
+  const [image, setImage] = useState<string>("https://picsum.photos/390");
   const [content, setContent] = useState<string>("");
 
   const handleUpload = async () => {
-    if (!content) return;
+    if (!content || !image) return;
 
     const newShowcase = {
       content,
-      image: "https://picsum.photos/390",
+      image,
+      likes: 0,
     };
 
     await addDoc(collection(db, "showcase"), newShowcase);
@@ -24,7 +26,11 @@ const ShowcaseCreate = () => {
     <Wrapper>
       <h2>New Showcase</h2>
       <Box component="form" sx={sx}>
-        <TextField disabled variant="standard" label="Image" />
+        <TextField
+          variant="standard"
+          label="Image URL"
+          onChange={(e) => setImage(e.target.value)}
+        />
         <TextField
           variant="standard"
           multiline

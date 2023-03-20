@@ -12,7 +12,6 @@ const ShowcaseList = () => {
       username: "user",
       profileImg: "string",
     },
-    likes: 10,
   };
 
   useEffect(() => {
